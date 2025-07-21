@@ -1,0 +1,153 @@
+[gd_scene load_steps=12 format=3 uid="uid://b5h2pri2rlto6"]
+
+[ext_resource type="Texture2D" uid="uid://cshhyvohbmrci" path="res://Player/Sprite/Playercharacter.png" id="1_t641g"]
+[ext_resource type="Script" path="res://Player/script/player.gd" id="1_vor6l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kybfp"]
+
+[sub_resource type="Animation" id="Animation_r5xe6"]
+resource_name = "Idile_down"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 2, 0]
+}
+
+[sub_resource type="Animation" id="Animation_dclll"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_tdciw"]
+resource_name = "Idile_up"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4, 7, 5]
+}
+
+[sub_resource type="Animation" id="Animation_wtnsn"]
+resource_name = "Idile_side"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_ul3xn"]
+resource_name = "Walk_down"
+length = 0.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 2, 6, 2]
+}
+
+[sub_resource type="Animation" id="Animation_lxld7"]
+resource_name = "Walk_side"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [2, 1, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_d565c"]
+resource_name = "Walk_up"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [5, 4, 4, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1uspr"]
+_data = {
+"Idile_down": SubResource("Animation_r5xe6"),
+"Idile_side": SubResource("Animation_wtnsn"),
+"Idile_up": SubResource("Animation_tdciw"),
+"RESET": SubResource("Animation_dclll"),
+"Walk_down": SubResource("Animation_ul3xn"),
+"Walk_side": SubResource("Animation_lxld7"),
+"Walk_up": SubResource("Animation_d565c")
+}
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(197, 121)
+script = ExtResource("1_vor6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kybfp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(0.0843108, 0.0843108)
+texture = ExtResource("1_t641g")
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1uspr")
+}
