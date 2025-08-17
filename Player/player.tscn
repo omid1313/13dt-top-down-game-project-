@@ -157,8 +157,6 @@ libraries = {
 "": SubResource("AnimationLibrary_1uspr")
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_3625j")
 
