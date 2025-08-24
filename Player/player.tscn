@@ -165,4 +165,4 @@ script = ExtResource("4_ax50n")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("5_npebl")
-move_speed = 300.0
+move_speed = 200.0
