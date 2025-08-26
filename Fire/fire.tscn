@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://dc6iro07ubuxl"]
+
+[ext_resource type="Script" path="res://Fire/fire.gd" id="1_dtkmp"]
+[ext_resource type="Texture2D" uid="uid://ban8fa02wako1" path="res://Fire/Sprite/fire_02.png" id="1_gi6d4"]
+
+[sub_resource type="Gradient" id="Gradient_3pl3a"]
+offsets = PackedFloat32Array(0.894977, 0.949772, 1)
+colors = PackedColorArray(0.894977, 0.894977, 0.894977, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7nwcn"]
+gradient = SubResource("Gradient_3pl3a")
+
+[sub_resource type="Curve" id="Curve_8l6c4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xtq5n"]
+curve = SubResource("Curve_8l6c4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_naln1"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 0.01
+angle_min = 32.0
+angle_max = 32.0
+inherit_velocity_ratio = 100.0
+velocity_pivot = Vector3(1, 0, 0)
+direction = Vector3(1, -1, 0)
+spread = 50.0
+gravity = Vector3(0, -100, 0)
+linear_accel_min = 35.34
+linear_accel_max = 55.0
+radial_accel_min = -47.07
+radial_accel_max = 20.0
+scale_min = 0.1
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_xtq5n")
+color = Color(0.0745098, 0.972549, 1, 0.847059)
+color_ramp = SubResource("GradientTexture1D_7nwcn")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7666v"]
+radius = 6.40789
+height = 39.5374
+
+[node name="Fire" type="Node2D"]
+position = Vector2(147, 89)
+scale = Vector2(2.6973, 4.80227)
+script = ExtResource("1_dtkmp")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.0313726, 1, 1, 1)
+self_modulate = Color(0, 0.827451, 1, 1)
+position = Vector2(0, 2.49882)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_naln1")
+texture = ExtResource("1_gi6d4")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-0.741483, 0.832939)
+rotation = -6.2768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(1.44702, -5.6317)
+scale = Vector2(0.983549, 0.536841)
+shape = SubResource("CapsuleShape2D_7666v")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
