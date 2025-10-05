@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://rg27etlontbg"]
+
+[ext_resource type="Script" path="res://Mainmenju.gd" id="1_vs5ud"]
+[ext_resource type="Texture2D" uid="uid://cj4ny64yx2p5" path="res://MainMenu/Space background.png" id="2_51fjg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpwax"]
+texture = ExtResource("2_51fjg")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5wyb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqu4w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfl5n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuygi"]
+bg_color = Color(0.989975, 0.990429, 0.999481, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.0323057, 0.0171481, 0.0884672, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_vs5ud")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dpwax")
+
+[node name="Button" type="Button" parent="Panel"]
+self_modulate = Color(0.1152, 0.72, 0.64944, 1)
+layout_mode = 0
+offset_left = 457.0
+offset_top = 221.0
+offset_right = 694.0
+offset_bottom = 303.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.960784, 0.133333, 0.211765, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j5wyb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qqu4w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kfl5n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xuygi")
+text = "START GAME"
+
+[node name="Button3" type="Button" parent="Panel"]
+self_modulate = Color(0.1152, 0.72, 0.64944, 1)
+layout_mode = 0
+offset_left = 460.0
+offset_top = 405.0
+offset_right = 697.0
+offset_bottom = 487.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.960784, 0.133333, 0.211765, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j5wyb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qqu4w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kfl5n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xuygi")
+text = "EXIT"
+
+[node name="Button2" type="Button" parent="Panel"]
+self_modulate = Color(0.1152, 0.72, 0.64944, 1)
+layout_mode = 0
+offset_left = 460.0
+offset_top = 313.0
+offset_right = 697.0
+offset_bottom = 395.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.960784, 0.133333, 0.211765, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j5wyb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qqu4w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kfl5n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xuygi")
+text = "OPTIONS"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 282.0
+offset_top = -56.0
+offset_right = 895.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0, 0.811765, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "DΛЯK HӨЯIƵӨN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]

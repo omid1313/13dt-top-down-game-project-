@@ -1,31 +1,52 @@
 extends Node2D
 
-@onready var particles = $GPUParticles2D
-@onready var area = $Area2D
-@onready var collision_shape = $Area2D/CollisionShape2D
-@onready var timer = $Timer
-var is_hidden = false
+@onready var fx: GPUParticles2D = $GPUParticles2D
+@onready var area: Area2D = $Area2D
+@onready var shape: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var timer: Timer = $Timer
 
-func toggle_visibility():
-# If the object is currently hidden (is_hidden is true)
-	if is_hidden:
-		particles.visible = true
-		area.visible = true
-		collision_shape.disabled = false
-	else:
-		particles.visible = false
-		area.visible = false
-		collision_shape.disabled = true
+enum State { OFF, WARN, ON }
 
-	is_hidden = !is_hidden  # Switch between hidden and visible states
-	timer.start()  # Restart the timer
+@export var off_time: float = 4  
+@export var warn_time: float = 2
+@export var on_time: float = 20
 
+var state: int = State.OFF             
 
-func _ready():
- # Set the timer's wait time to 3 seconds before triggering the timeout
-	timer.wait_time = 1000
-	timer.start()
-	timer.connect("timeout", Callable(self, "toggle_visibility"))
+func _ready() -> void:
+	timer.one_shot = true
+	timer.timeout.connect(_advance)
+	_enter(State.OFF)
+
+func _advance() -> void:
+	match state:
+		State.OFF:  _enter(State.WARN)
+		State.WARN: _enter(State.ON)
+		State.ON:   _enter(State.OFF)
+
+func _enter(s: int) -> void:           
+	state = s
+	match state:
+		State.OFF:
+			fx.visible = false
+			fx.emitting = false
+			area.visible = false
+			shape.set_deferred("disabled", true)
+			timer.start(off_time)
+
+		State.WARN:
+			fx.visible = true
+			fx.emitting = true   
+			area.visible = true
+			shape.set_deferred("disabled", true)
+			timer.start(warn_time)
+
+		State.ON:
+			fx.visible = true
+			fx.emitting = true
+			area.visible = true
+			shape.set_deferred("disabled", false)
+			timer.start(on_time)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

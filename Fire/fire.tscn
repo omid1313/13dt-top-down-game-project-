@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dc6iro07ubuxl"]
+[gd_scene load_steps=10 format=3 uid="uid://dc6iro07ubuxl"]
 
 [ext_resource type="Script" path="res://Fire/fire.gd" id="1_dtkmp"]
 [ext_resource type="Texture2D" uid="uid://ban8fa02wako1" path="res://Fire/Sprite/fire_02.png" id="1_gi6d4"]
+[ext_resource type="Script" path="res://Player/script/state.gd" id="3_ox27a"]
 
 [sub_resource type="Gradient" id="Gradient_3pl3a"]
 offsets = PackedFloat32Array(0.894977, 0.949772, 1)
@@ -66,5 +67,8 @@ scale = Vector2(0.983549, 0.536841)
 shape = SubResource("CapsuleShape2D_7666v")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="State" type="Node" parent="."]
+script = ExtResource("3_ox27a")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

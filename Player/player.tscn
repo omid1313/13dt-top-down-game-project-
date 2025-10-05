@@ -146,8 +146,8 @@ script = ExtResource("1_vor6l")
 shape = SubResource("CircleShape2D_kybfp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
-scale = Vector2(0.0843108, 0.0843108)
+position = Vector2(3.3125, -12.3125)
+scale = Vector2(0.103739, 0.109604)
 texture = ExtResource("1_t641g")
 hframes = 3
 vframes = 3
