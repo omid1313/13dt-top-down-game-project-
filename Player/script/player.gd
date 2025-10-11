@@ -54,3 +54,7 @@ func AninDirection() -> String:
 		return "up"
 	else:
 		return "side"
+
+func _die() -> void:  
+# When player touches the bees than dies.
+	get_tree().reload_current_scene()

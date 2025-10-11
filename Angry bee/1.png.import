@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d03jmup7xfvje"
-path="res://.godot/imported/1.png-2bbe89129fc6023ee8e42fd68c6d5f61.ctex"
+uid="uid://dxpvebijdc70p"
+path="res://.godot/imported/1.png-90df2e608a8404455a4c5c6cb8c690c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprite/1.png"
-dest_files=["res://.godot/imported/1.png-2bbe89129fc6023ee8e42fd68c6d5f61.ctex"]
+source_file="res://Angry bee/1.png"
+dest_files=["res://.godot/imported/1.png-90df2e608a8404455a4c5c6cb8c690c9.ctex"]
 
 [params]
 

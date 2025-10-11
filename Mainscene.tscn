@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b37n0ai5f062r"]
+[gd_scene load_steps=6 format=3 uid="uid://b37n0ai5f062r"]
 
 [ext_resource type="PackedScene" uid="uid://b5h2pri2rlto6" path="res://Player/player.tscn" id="1_ssqj7"]
 [ext_resource type="PackedScene" uid="uid://dqm4f2rv3i257" path="res://Tile maps/Space tile map.tscn" id="2_tec8p"]
 [ext_resource type="PackedScene" uid="uid://b0v2wre34urkn" path="res://Enemy.tscn" id="3_pi5ph"]
 [ext_resource type="PackedScene" uid="uid://dc6iro07ubuxl" path="res://Fire/fire.tscn" id="4_y6owr"]
-[ext_resource type="Texture2D" uid="uid://d03jmup7xfvje" path="res://Player/Sprite/1.png" id="5_bkeb6"]
-[ext_resource type="Texture2D" uid="uid://buc5fjgfe1xox" path="res://Player/Sprite/Health bar.png" id="6_uaink"]
+[ext_resource type="PackedScene" uid="uid://cdmjlpygikndp" path="res://Angry-bee.tscn" id="5_n5bft"]
 
 [node name="Mainscene" type="Node2D"]
 position = Vector2(-52, -52)
@@ -35,35 +34,5 @@ position = Vector2(405, 979)
 [node name="Fire3" parent="." instance=ExtResource("4_y6owr")]
 position = Vector2(428, 464)
 
-[node name="1" type="Sprite2D" parent="."]
-modulate = Color(0.361761, 0.654764, 0.68781, 1)
-self_modulate = Color(0.976683, 0.956552, 0.98837, 1)
-position = Vector2(1331, 300)
-scale = Vector2(0.135965, 0.134783)
-texture = ExtResource("5_bkeb6")
-
-[node name="3" type="Sprite2D" parent="."]
-modulate = Color(0.361761, 0.654764, 0.68781, 1)
-self_modulate = Color(0.976683, 0.956552, 0.98837, 1)
-position = Vector2(948, 573)
-scale = Vector2(0.135965, 0.134783)
-texture = ExtResource("5_bkeb6")
-
-[node name="4" type="Sprite2D" parent="."]
-modulate = Color(0.361761, 0.654764, 0.68781, 1)
-self_modulate = Color(0.976683, 0.956552, 0.98837, 1)
-position = Vector2(1565, 750)
-scale = Vector2(0.135965, 0.134783)
-texture = ExtResource("5_bkeb6")
-
-[node name="2" type="Sprite2D" parent="."]
-modulate = Color(0.361761, 0.654764, 0.68781, 1)
-self_modulate = Color(0.976683, 0.956552, 0.98837, 1)
-position = Vector2(1331, 215)
-scale = Vector2(0.135965, 0.134783)
-texture = ExtResource("5_bkeb6")
-
-[node name="HealthBar" type="Sprite2D" parent="."]
-position = Vector2(119, 76)
-scale = Vector2(-0.100969, 0.0950096)
-texture = ExtResource("6_uaink")
+[node name="Angry bee" parent="." instance=ExtResource("5_n5bft")]
+position = Vector2(837, 381)
