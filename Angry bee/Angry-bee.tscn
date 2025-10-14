@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cdmjlpygikndp"]
 
 [ext_resource type="Texture2D" uid="uid://dxpvebijdc70p" path="res://Angry bee/1.png" id="1_5klv1"]
-[ext_resource type="Script" path="res://angry_bee.gd" id="1_ikjxy"]
+[ext_resource type="Script" path="res://Angry bee/angry_bee.gd" id="1_ikjxy"]
 [ext_resource type="Texture2D" uid="uid://b2aov814sfo4c" path="res://Angry bee/2.png" id="2_fbfau"]
 [ext_resource type="Texture2D" uid="uid://d3wl4xeqw0xi1" path="res://Angry bee/3.png" id="3_658b6"]
 [ext_resource type="Texture2D" uid="uid://bknsqihwyaxw5" path="res://Angry bee/4.png" id="4_7p7gf"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dpmy82avqxhxr" path="res://Angry bee/6.png" id="6_xab4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8p2r"]
-size = Vector2(28.5, 19)
+size = Vector2(33, 19)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rr4bj"]
 animations = [{
@@ -38,9 +38,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7qrp"]
-size = Vector2(28, 18)
+size = Vector2(26, 16)
 
 [node name="Angry bee" type="CharacterBody2D"]
+modulate = Color(0.79, 0.2449, 0.55379, 1)
 position = Vector2(278, 106)
 script = ExtResource("1_ikjxy")
 
@@ -48,18 +49,19 @@ script = ExtResource("1_ikjxy")
 position = Vector2(6, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 1)
+position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_l8p2r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(6, 3)
-scale = Vector2(0.0723684, 0.0695652)
+position = Vector2(7.75001, 1)
+scale = Vector2(0.0800439, 0.0811594)
 sprite_frames = SubResource("SpriteFrames_rr4bj")
 autoplay = "default"
 speed_scale = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 4)
+visible = false
+position = Vector2(8, 3)
 shape = SubResource("RectangleShape2D_v7qrp")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_die_entered"]

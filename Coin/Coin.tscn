@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://d3mcabk0xwcr"]
+
+[ext_resource type="Texture2D" uid="uid://bctin5q1woaue" path="res://Coin/coin_01.png" id="1_as0dr"]
+[ext_resource type="Script" path="res://Coin/coin.gd" id="1_m6jkw"]
+[ext_resource type="Texture2D" uid="uid://c87te4sdou82y" path="res://Coin/coin_02.png" id="2_s0j4i"]
+[ext_resource type="Texture2D" uid="uid://dru1v0deke0nj" path="res://Coin/coin_03.png" id="3_itpvy"]
+[ext_resource type="Texture2D" uid="uid://c5aqslx0j7tg2" path="res://Coin/coin_04.png" id="4_xv566"]
+[ext_resource type="Texture2D" uid="uid://1eboxm7m8hwj" path="res://Coin/coin_05.png" id="5_qdj22"]
+[ext_resource type="Texture2D" uid="uid://wnhvr7gbi8a0" path="res://Coin/coin_06.png" id="6_2mrrj"]
+[ext_resource type="Texture2D" uid="uid://kxu07kdryuhj" path="res://Coin/coin_07.png" id="7_pe10h"]
+[ext_resource type="Texture2D" uid="uid://caoqwxmrp4woi" path="res://Coin/coin_08.png" id="8_ln8yw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ifmdo"]
+radius = 5.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrx5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_as0dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s0j4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_itpvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xv566")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qdj22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2mrrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pe10h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ln8yw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Coin" type="Node2D"]
+position = Vector2(44, 37)
+script = ExtResource("1_m6jkw")
+
+[node name="Area2D" type="Area2D" parent="." groups=["coin"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_ifmdo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.999998, 2)
+scale = Vector2(0.255556, 0.21875)
+sprite_frames = SubResource("SpriteFrames_hrx5j")
+autoplay = "default"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

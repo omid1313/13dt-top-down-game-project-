@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba5foabcxnted"]
+
+[ext_resource type="Texture2D" uid="uid://d4hnfx1eait0e" path="res://Cave door/cave door.png" id="1_gxwpo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7i14"]
+size = Vector2(61.5, 88)
+
+[node name="Cave door" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.99997, 1)
+scale = Vector2(0.155039, 0.157895)
+texture = ExtResource("1_gxwpo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_j7i14")

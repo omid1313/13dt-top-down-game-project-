@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5h2pri2rlto6"]
+[gd_scene load_steps=17 format=3 uid="uid://b5h2pri2rlto6"]
 
 [ext_resource type="Texture2D" uid="uid://cshhyvohbmrci" path="res://Player/Sprite/Playercharacter.png" id="1_t641g"]
 [ext_resource type="Script" path="res://Player/script/player.gd" id="1_vor6l"]
 [ext_resource type="Script" path="res://Player/script/Player_state-machine.gd" id="3_3625j"]
 [ext_resource type="Script" path="res://Player/script/state_Idle.gd" id="4_ax50n"]
 [ext_resource type="Script" path="res://Player/script/state_Walk.gd" id="5_npebl"]
+[ext_resource type="Texture2D" uid="uid://buc5fjgfe1xox" path="res://Player/Sprite/Health bar.png" id="6_48gwj"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kybfp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aukri"]
+size = Vector2(20, 33)
 
 [sub_resource type="Animation" id="Animation_r5xe6"]
 resource_name = "Idile_down"
@@ -136,14 +138,18 @@ _data = {
 "Walk_up": SubResource("Animation_d565c")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65ybj"]
+size = Vector2(17, 30)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(197, 121)
 collision_mask = 16
 wall_min_slide_angle = 0.174533
 script = ExtResource("1_vor6l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_kybfp")
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_aukri")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3.3125, -12.3125)
@@ -166,3 +172,46 @@ script = ExtResource("4_ax50n")
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("5_npebl")
 move_speed = 200.0
+
+[node name="health_bar" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="health_bar"]
+offset_left = -30.0
+offset_top = -18.0
+offset_right = 95.0
+offset_bottom = 22.0
+
+[node name="TextureRect" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(39, 0)
+layout_mode = 2
+
+[node name="HealthBar" type="Sprite2D" parent="health_bar/HBoxContainer/TextureRect"]
+position = Vector2(53, 42)
+scale = Vector2(0.100586, 0.0849609)
+texture = ExtResource("6_48gwj")
+
+[node name="TextureRect2" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(39, 0)
+layout_mode = 2
+
+[node name="HealthBar" type="Sprite2D" parent="health_bar/HBoxContainer/TextureRect2"]
+position = Vector2(53, 42)
+scale = Vector2(0.100586, 0.0849609)
+texture = ExtResource("6_48gwj")
+
+[node name="TextureRect3" type="TextureRect" parent="health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(39, 0)
+layout_mode = 2
+
+[node name="HealthBar" type="Sprite2D" parent="health_bar/HBoxContainer/TextureRect3"]
+position = Vector2(53, 42)
+scale = Vector2(0.100586, 0.0849609)
+texture = ExtResource("6_48gwj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -11)
+shape = SubResource("RectangleShape2D_65ybj")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]

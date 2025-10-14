@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://rg27etlontbg"]
 
-[ext_resource type="Script" path="res://Mainmenju.gd" id="1_vs5ud"]
-[ext_resource type="Texture2D" uid="uid://cj4ny64yx2p5" path="res://MainMenu/Space background.png" id="2_51fjg"]
+[ext_resource type="Script" path="res://MainMenu/Mainmenju.gd" id="1_okp62"]
+[ext_resource type="Texture2D" uid="uid://cj4ny64yx2p5" path="res://MainMenu/Space background.png" id="2_wsd8q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpwax"]
-texture = ExtResource("2_51fjg")
+texture = ExtResource("2_wsd8q")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5wyb"]
 
@@ -27,7 +27,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-script = ExtResource("1_vs5ud")
+script = ExtResource("1_okp62")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
