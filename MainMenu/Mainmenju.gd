@@ -1,13 +1,13 @@
 extends Control
 
 # Starts the game 
-func _on_Start_pressed() -> void:
+func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://Mainscene.tscn")
 
-# Exits from the game 
-func _on_Exit_pressed() -> void:
-	get_tree().quit() 
 
-# Opens the option setting
-func _on_Options_pressed() -> void:
-	pass 
+func _on_option_pressed() -> void:
+	pass # Replace with function body.
+
+# Exit from game 
+func _on_exit_pressed() -> void:
+	get_tree().quit() 

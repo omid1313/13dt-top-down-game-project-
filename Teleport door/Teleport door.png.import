@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4hnfx1eait0e"
-path="res://.godot/imported/cave door.png-9cb29ef4178f294b24bf76d4136c4773.ctex"
+path="res://.godot/imported/Teleport door.png-4c76cc73c1071104b845eda463377251.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cave door/cave door.png"
-dest_files=["res://.godot/imported/cave door.png-9cb29ef4178f294b24bf76d4136c4773.ctex"]
+source_file="res://Teleport door/Teleport door.png"
+dest_files=["res://.godot/imported/Teleport door.png-4c76cc73c1071104b845eda463377251.ctex"]
 
 [params]
 

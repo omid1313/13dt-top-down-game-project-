@@ -25,28 +25,28 @@ shadow_offset = Vector2(0, 3.41)
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1751.0
+offset_bottom = 910.0
 script = ExtResource("1_okp62")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1159.0
-offset_bottom = 649.0
+offset_right = 1749.0
+offset_bottom = 910.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_dpwax")
 
 [node name="Button" type="Button" parent="Panel"]
 self_modulate = Color(0.207, 0.49575, 0.9, 1)
 layout_mode = 0
-offset_left = 433.0
-offset_top = 200.0
-offset_right = 727.0
-offset_bottom = 302.0
+offset_left = 704.0
+offset_top = 288.0
+offset_right = 1038.0
+offset_bottom = 452.0
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.960784, 0.133333, 0.211765, 1)
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 43
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j5wyb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qqu4w")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kfl5n")
@@ -56,15 +56,15 @@ text = "START GAME"
 [node name="Button3" type="Button" parent="Panel"]
 self_modulate = Color(0.207843, 0.494118, 0.901961, 1)
 layout_mode = 0
-offset_left = 436.0
-offset_top = 429.0
-offset_right = 727.0
-offset_bottom = 523.0
+offset_left = 705.0
+offset_top = 657.0
+offset_right = 1026.0
+offset_bottom = 820.0
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.960784, 0.133333, 0.211765, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 43
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j5wyb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qqu4w")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kfl5n")
@@ -74,15 +74,15 @@ text = "EXIT"
 [node name="Button2" type="Button" parent="Panel"]
 self_modulate = Color(0.207843, 0.494118, 0.901961, 1)
 layout_mode = 0
-offset_left = 435.0
-offset_top = 316.0
-offset_right = 726.0
-offset_bottom = 415.0
+offset_left = 701.0
+offset_top = 473.0
+offset_right = 1033.0
+offset_bottom = 631.0
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.960784, 0.133333, 0.211765, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 43
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j5wyb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qqu4w")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kfl5n")
@@ -91,17 +91,17 @@ text = "OPTIONS"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 291.0
-offset_top = -29.0
-offset_right = 904.0
-offset_bottom = 172.0
+offset_left = 525.0
+offset_top = 2.0
+offset_right = 1225.0
+offset_bottom = 235.0
 theme_override_colors/font_color = Color(0, 0.811765, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 90
 text = "DΛЯK HӨЯIƵӨN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_option_pressed"]

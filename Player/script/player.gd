@@ -109,3 +109,6 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("coin"):
 		set_coin(coin_counter + 1)
 		print(coin_counter)
+
+func get_coin_count() -> int:
+	return coin_counter 

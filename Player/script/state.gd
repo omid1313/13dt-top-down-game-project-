@@ -3,7 +3,6 @@ class_name State extends Node
 static var player
 
 
-
 func Enter() -> void:
 	pass
 

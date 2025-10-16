@@ -7,9 +7,9 @@ extends Node2D
 
 enum State { OFF, WARN, ON }
 
-@export var off_time: float = 4  
+@export var off_time: float = 3 
 @export var warn_time: float = 2
-@export var on_time: float = 20
+@export var on_time: float = 15
 
 var state: int = State.OFF             
 

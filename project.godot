@@ -17,8 +17,10 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/window_width_override=1152
-window/size/window_height_override=648
+window/size/viewport_width=1750
+window/size/viewport_height=908
+window/size/window_width_override=1750
+window/size/window_height_override=908
 window/canvas_textures/default_texture_filter=1
 
 [input]
