@@ -3,9 +3,12 @@ extends CharacterBody2D
 @export var speed: float = 90.0
 @export var direction: int = -1                  # start moving left
 @export var anim_name: StringName = "fly"        # animation name
-@export var sprite_faces_right: bool = false     # false = sprite faces left by default
+@export var sprite_faces_right: bool = false     # false = sprite faces left 
+
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+
 
 func _ready() -> void:
 	# Ensure direction is valid
@@ -17,6 +20,8 @@ func _ready() -> void:
 	# Start animation
 	if sprite and anim_name != "":
 		sprite.play(anim_name)
+
+
 
 # Controls the bee’s movement and flips its direction when it hits a wall.
 func _physics_process(delta: float) -> void:
@@ -38,6 +43,8 @@ func _physics_process(delta: float) -> void:
 	# Keep animation playing
 	if sprite and not sprite.is_playing():
 		sprite.play(anim_name)
+
+
 
 #  Damage player on collision.
 func _on_body_die_entered(body: Node2D) -> void:

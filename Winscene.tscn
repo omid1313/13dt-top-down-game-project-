@@ -49,6 +49,7 @@ vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(0.207, 0.49575, 0.9, 1)
+layout_mode = 0
 offset_left = 232.0
 offset_top = 480.0
 offset_right = 566.0
@@ -66,6 +67,7 @@ text = "Return "
 
 [node name="Button2" type="Button" parent="."]
 self_modulate = Color(0.207, 0.49575, 0.9, 1)
+layout_mode = 0
 offset_left = 1140.0
 offset_top = 479.0
 offset_right = 1474.0
