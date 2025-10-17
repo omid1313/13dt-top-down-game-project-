@@ -16,7 +16,7 @@ position = Vector2(-52, -52)
 position = Vector2(1727, 491)
 
 [node name="Player" parent="." instance=ExtResource("1_ssqj7")]
-position = Vector2(1539, 544)
+position = Vector2(241, 541)
 
 [node name="Label" type="Label" parent="Player"]
 offset_left = -53.0
@@ -67,19 +67,19 @@ position = Vector2(334, 798)
 position = Vector2(449, 724)
 
 [node name="Coin4" parent="." instance=ExtResource("6_m17q6")]
-position = Vector2(1573, 723)
+position = Vector2(94, 900)
 
 [node name="Coin5" parent="." instance=ExtResource("6_m17q6")]
-position = Vector2(1727, 635)
+position = Vector2(616, 502)
 
 [node name="Coin6" parent="." instance=ExtResource("6_m17q6")]
-position = Vector2(1563, 631)
+position = Vector2(732, 824)
 
 [node name="Coin2" parent="." instance=ExtResource("6_m17q6")]
-position = Vector2(1650, 386)
+position = Vector2(1494, 74)
 
 [node name="Coin3" parent="." instance=ExtResource("6_m17q6")]
-position = Vector2(1563, 449)
+position = Vector2(111, 247)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 778.0
